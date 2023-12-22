@@ -35,7 +35,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ["url","date"];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -44,12 +44,24 @@ abstract class BaseController extends Controller
     // protected $session;
 
     /**
+     * View a gönderilen data
+     */
+     protected $data=[];
+
+
+    /**
      * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
+        $this->data=[
+            "page"=>[
+                "title"=>"Codeigniter 4 RestApi",
+                
+            ]
+        ];
 
         // Preload any models, libraries, etc, here.
 
